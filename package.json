@@ -1,0 +1,53 @@
+{
+  "name": "beagle-test",
+  "version": "1.0",
+  "description": "challenge for beagle recruitment",
+  "main": "index.ts",
+  "author": "tiago peres frança",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "npx webpack-dev-server --open --colors --hot --mode development",
+    "start": "npx http-server ./lib",
+    "build": "npm run test && npx webpack --mode production",
+    "test": "npx jest --config=jest.config.json"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.3",
+    "@types/lodash": "^4.14.149",
+    "lodash": "^4.17.15",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "styled-components": "5.0.0",
+    "typescript": "3.7.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-external-helpers": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "7.8.3",
+    "@babel/preset-react": "7.8.3",
+    "@babel/preset-typescript": "7.8.3",
+    "@types/enzyme": "3.10.4",
+    "@types/enzyme-adapter-react-16": "1.0.5",
+    "@types/jest": "24.9.0",
+    "@types/react": "16.9.19",
+    "@types/react-dom": "16.9.5",
+    "@types/styled-components": "4.4.2",
+    "babel-loader": "8.0.6",
+    "babel-plugin-styled-components": "1.10.6",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "enzyme-to-json": "3.4.3",
+    "html-webpack-plugin": "3.2.0",
+    "http-server": "^0.12.1",
+    "jest": "25.1.0",
+    "source-map-loader": "0.2.4",
+    "ts-jest": "25.0.0",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.1",
+    "webpack-hot-middleware": "2.25.0"
+  }
+}
