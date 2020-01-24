@@ -8,8 +8,10 @@ export default interface MySchema {
     value: string,
   },
   form: {
-    action: string,
+    url: string,
     method: 'post' | 'get' | 'put' | 'delete' | 'patch',
+    successMessage?: string,
+    errorMessage?: string,
   },
   input: {
     name: string,
@@ -17,7 +19,7 @@ export default interface MySchema {
     validations?: Array<'required' | 'validateMajority'>, 
   },
   button: {
-    action: 'submit' | 'clear',
+    action: 'submit' | 'reset',
     title: string,
   },
 }

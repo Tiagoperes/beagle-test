@@ -2,20 +2,11 @@ import React, { FC } from 'react'
 
 interface Props {
   title: string,
-  action: 'submit' | 'clear',
+  action: 'submit' | 'reset',
 }
 
 const Button: FC<Props> = ({ title, action }) => {
-  const actions = {
-    submit: () => {
-      console.log('submit')
-    },
-    clear: () => {
-      console.log('clear')
-    }
-  }
-
-  return <button onClick={actions[action]}>{title}</button>
+  return <button type={action}>{title}</button>
 }
 
 export default Button
