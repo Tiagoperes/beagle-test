@@ -1,4 +1,5 @@
-import createServerDrivenUI from './sduiLib'
+import createServerDrivenUI from './sduiLib/core'
+import { createReactComponentTree } from './sduiLib/react'
 import MySchema from './mySduiSchema'
 import Error from './sduiComponents/Error'
 import Loading from './sduiComponents/Loading'
@@ -14,6 +15,7 @@ export default createServerDrivenUI<MySchema>({
   ErrorComponent: Error,
   LoadingComponent: Loading,
   shouldFallbackToCache: true,
+  renderComponentTree: createReactComponentTree,
   components: {
     button: Button,
     container: Container,

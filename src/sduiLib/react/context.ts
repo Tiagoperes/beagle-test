@@ -1,6 +1,6 @@
 import { createContext } from 'react'
-import { TServerDrivenUI } from './'
+import { ServerDrivenUI } from '../core/types'
 
-const context = createContext<TServerDrivenUI | null>(null)
+const context = createContext<ServerDrivenUI | null>(null)
 export const ServerDrivenUIProvider = context.Provider
 export default context

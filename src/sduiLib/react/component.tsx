@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, Fragment, useState, useContext, useEffect } from 'react'
 import sduiContext from './context'
-import { LoadParams } from './'
+import { LoadParams } from '../core/types'
 
 const ServerDrivenUI: FC<LoadParams> = (loadParams) => {
   const sdui = useContext(sduiContext)
