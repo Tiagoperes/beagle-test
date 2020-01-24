@@ -3,20 +3,11 @@ import React, { FC } from 'react'
 interface Props {
   action: string,
   method: 'post' | 'get' | 'put' | 'delete' | 'patch',
-  children: Array<FC>,
 }
 
-const Button: FC<Props> = ({ title, action }) => {
-  const actions = {
-    submit: () => {
-      console.log('submit')
-    },
-    clear: () => {
-      console.log('clear')
-    }
-  }
-
-  return <button onClick={actions[action]}>{title}</button>
+const Form: FC<Props> = ({ action, method, children }) => {
+  console.log('form', action, method)
+  return <form>{children}</form>
 }
 
-export default Button
+export default Form

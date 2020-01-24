@@ -12,6 +12,7 @@ interface Props {
 
 const Input: FC<Props> = ({ value, name, placeholder, validations }) => {
   const [error, setError] = useState<string | undefined>()
+  const [shouldShowError, setShouldShowError] = useState(false)
 
   const validate = (event: React.FocusEvent<HTMLInputElement>) => {
     const { value } = event.target
@@ -24,8 +25,14 @@ const Input: FC<Props> = ({ value, name, placeholder, validations }) => {
 
   return (
     <InputGroup>
-      <input name={name} onBlur={validate} value={value} placeholder={placeholder} />
-      {error && <Error>{error}</Error>}
+      <input
+        name={name}
+        onChange={validate}
+        onBlur={() => setShouldShowError(true)}
+        value={value}
+        placeholder={placeholder}
+      />
+      {shouldShowError && error && <Error>{error}</Error>}
     </InputGroup>
   )
 }

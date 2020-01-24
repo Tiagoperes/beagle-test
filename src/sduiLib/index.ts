@@ -51,7 +51,7 @@ function createServerDrivenUI<Schema = DefaultSchema>(config: Config<Schema>) {
     const Component = config.components[type]
     const reactChildren = map(children, createReactComponentTree)
     // @ts-ignore
-    return React.createElement(Component, { ...props, children: reactChildren })
+    return React.createElement(Component, props, reactChildren)
   }
 
   const createServerDrivenElement = async (loadParams: LoadParams) => {

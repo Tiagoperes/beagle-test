@@ -1,10 +1,6 @@
 import React, { FC } from 'react'
 
-interface Props {
-  children: Array<FC>,
-}
-
-const Container: FC<Props> = ({ children }) => {
+const Container: FC = ({ children }) => {
   return (
     <div>
       {children}
