@@ -1,5 +1,10 @@
 export default interface MySchema {
-  container: {},
+  container: {
+    flexDirection?: string,
+  },
+  card: {
+    flexDirection?: string,
+  },
   image: {
     url: string,
     description: string,

@@ -30,6 +30,7 @@ function createServerDrivenUI<Schema = DefaultSchema>(config: Config<Schema>): S
     try {
       uiTree = await loadFromServer(loadParams)
     } catch (error) {
+      console.log('Error while fetching server driven component:', error)
       uiTree = await loadFromCache(loadParams)
     }
     if (uiTree) return config.renderComponentTree(config, uiTree)

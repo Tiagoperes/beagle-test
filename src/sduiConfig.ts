@@ -9,6 +9,7 @@ import Form from './sduiComponents/Form'
 import Input from './sduiComponents/Input'
 import Button from './sduiComponents/Button'
 import Text from './sduiComponents/Text'
+import Card from './sduiComponents/Card'
 
 export default createServerDrivenUI<MySchema>({
   baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',
@@ -23,5 +24,6 @@ export default createServerDrivenUI<MySchema>({
     image: Image,
     input: Input,
     text: Text,
+    card: Card,
   }
 })

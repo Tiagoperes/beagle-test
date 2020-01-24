@@ -2,14 +2,20 @@ import React, { FC } from 'react'
 import { render } from 'react-dom'
 import sduiConfig from './sduiConfig'
 import { ServerDrivenUIProvider, ServerDrivenUI } from './sduiLib/react'
+import NavBar from './components/NavBar'
+import { Page, Content } from './styled'
 
-const path = 'd803e59aadc5c3cc8def28553f17d61f/raw/5ce18f70b9b1e6ae275a7b420429c54f4ab176b2/beagle-example.json'
+const path = 'd803e59aadc5c3cc8def28553f17d61f/raw/d52f2a2b085e1422a925039cf091f982808cdfd9/beagle-example.json'
 
 const App: FC = () => (
-  <ServerDrivenUIProvider value={sduiConfig}>
-    <p>Hello World</p>
-    <ServerDrivenUI path={path} />
-  </ServerDrivenUIProvider>
+  <Page>
+    <ServerDrivenUIProvider value={sduiConfig}>
+      <NavBar />
+      <Content>
+        <ServerDrivenUI path={path} />
+      </Content>
+    </ServerDrivenUIProvider>
+  </Page>
 )
 
 render(<App />, document.getElementById('root'))
