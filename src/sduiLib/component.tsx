@@ -1,15 +1,15 @@
-import React, { FC, useState, useContext, useEffect } from 'react'
+import React, { FC, ReactNode, Fragment, useState, useContext, useEffect } from 'react'
 import sduiContext from './context'
 import { LoadParams } from './'
 
 const ServerDrivenUI: FC<LoadParams> = (loadParams) => {
   const sdui = useContext(sduiContext)
-  const [SDUIComponent, setSDUIComponent] = useState<FC>()
+  const [renderedTree, setRenderedTree] = useState<ReactNode>()
 
   const loadUI = async () => {
     if (!sdui) return
     const Component = await sdui.createServerDrivenElement(loadParams)
-    setSDUIComponent(Component)
+    setRenderedTree(Component)
   }
 
   useEffect(() => {
@@ -20,8 +20,7 @@ const ServerDrivenUI: FC<LoadParams> = (loadParams) => {
     throw Error('Couldn\'t find a ServerDrivenUIProvider in the component tree!')
   }
 
-  if (SDUIComponent) return <SDUIComponent />
-  return <sdui.Loading />
+  return renderedTree ? <Fragment>{renderedTree}</Fragment> : <sdui.Loading />
 }
 
 export default ServerDrivenUI

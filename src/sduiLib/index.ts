@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import { map } from 'lodash'
+import React, { FC, ReactNode } from 'react'
+import { map, uniqueId } from 'lodash'
 
 const namespace = '@beagle-web/cache'
 
@@ -12,7 +12,7 @@ interface Config<Schema> {
   ErrorComponent: FC,
   LoadingComponent: FC,
   components: {
-    [K in keyof Schema]: FC<Omit<Schema[K], 'children'> & { children?: Array<FC> }>
+    [K in keyof Schema]: FC<Schema[K]>
   },
 }
 
@@ -26,6 +26,7 @@ export interface LoadParams {
 interface UIElement<Schema> {
   type: keyof Schema,
   children?: Array<UIElement<Schema>>,
+  key?: string,
   [key: string]: any,
 }
 
@@ -47,22 +48,27 @@ function createServerDrivenUI<Schema = DefaultSchema>(config: Config<Schema>) {
     return uiTree
   }
 
-  const createReactComponentTree = ({ type, children, ...props }: UIElement<Schema>): FC => {
+  const createReactComponentTree = ({
+    type,
+    children,
+    key = uniqueId(),
+    ...props
+  }: UIElement<Schema>): ReactNode => {
     const Component = config.components[type]
     const reactChildren = map(children, createReactComponentTree)
     // @ts-ignore
-    return React.createElement(Component, props, reactChildren)
+    return React.createElement(Component, { ...props, key }, reactChildren)
   }
 
-  const createServerDrivenElement = async (loadParams: LoadParams) => {
-    let uiTree
+  const createServerDrivenElement = async (loadParams: LoadParams): Promise<ReactNode> => {
+    let uiTree: UIElement<Schema>
     try {
       uiTree = await loadFromServer(loadParams)
     } catch (error) {
       uiTree = await loadFromCache(loadParams)
     }
     if (uiTree) return createReactComponentTree(uiTree)
-    return config.ErrorComponent
+    return React.createElement(config.ErrorComponent)
   }
 
   return {

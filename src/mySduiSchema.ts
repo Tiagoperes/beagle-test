@@ -1,7 +1,5 @@
 export default interface MySchema {
-  container: {
-    children: Array<MySchema[keyof MySchema]>,
-  },
+  container: {},
   image: {
     url: string,
     description: string,
@@ -12,7 +10,6 @@ export default interface MySchema {
   form: {
     action: string,
     method: 'post' | 'get' | 'put' | 'delete' | 'patch',
-    children: Array<MySchema[keyof MySchema]>,
   },
   input: {
     name: string,

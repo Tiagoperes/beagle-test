@@ -10,7 +10,7 @@ import Button from './sduiComponents/Button'
 import Text from './sduiComponents/Text'
 
 export default createServerDrivenUI<MySchema>({
-  baseUrl: 'http://teste.com',
+  baseUrl: 'https://gist.githubusercontent.com/Tiagoperes',
   ErrorComponent: Error,
   LoadingComponent: Loading,
   shouldFallbackToCache: true,
