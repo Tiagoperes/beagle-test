@@ -34,6 +34,14 @@ module.exports = (env, { mode = 'development' }) => {
             },
           },
         },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
+        },
       ],
     },
     output: {

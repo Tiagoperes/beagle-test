@@ -10,7 +10,7 @@ const createReactComponentTree = <Schema>(
   const Component = config.components[type]
 
   if (!Component) {
-    console.log(`Warning: server driven UI could not find component ${type}. This component and its children won't be rendered.`)
+    console.error(`Error: server driven UI could not find component ${type}. This component and its children won't be rendered.`)
     return React.createElement(Fragment)
   }
 

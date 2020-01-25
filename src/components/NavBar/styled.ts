@@ -36,8 +36,13 @@ export const NavButton = styled.div`
   cursor: pointer;
   margin: 0 8px;
   padding: 10px 15px;
+  transition: background-color 0.3s;
 
   :first-child {
     margin-right: 0;
+  }
+
+  :hover {
+    background-color: #86251C;
   }
 `

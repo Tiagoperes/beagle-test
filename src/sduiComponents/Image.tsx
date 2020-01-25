@@ -2,13 +2,12 @@ import React, { FC } from 'react'
 
 interface Props {
   url: string,
-  description: string,
-  width?: number,
-  height?: number,
+  description?: string,
+  style?: Record<string, any>,
 }
 
-const Image: FC<Props> = ({ url, description, width, height }) => (
-  <img src={url} alt={description} style={{ width, height }} />
+const Image: FC<Props> = ({ url, description, style }) => (
+  <img src={url} alt={description} style={style} />
 )
 
 export default Image
