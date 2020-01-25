@@ -14,6 +14,7 @@ type SupportedComponent<Props = any> = FC<Props>
 
 export interface Config<Schema = any> {
   baseUrl: string,
+  schemaUrl?: string,
   headers?: Record<string, string>,
   shouldFallbackToCache: boolean,
   ErrorComponent: SupportedComponent,

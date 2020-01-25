@@ -1,6 +1,6 @@
 import React, { FC, useRef, useState } from 'react'
 import { createForm, FormProvider } from './context'
-import { sendRequest, HttpMethod } from '../../utils/network'
+import { sendRequest, HttpMethod } from '../../../utils/network'
 import Loading from '../Loading'
 import { LoadingPanel, StyledForm } from './styled'
 

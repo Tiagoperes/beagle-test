@@ -9,50 +9,13 @@
     "sourceMap": true,
     "target": "esnext",
     "moduleResolution": "node",
-    "strict": true
+    "strict": true,
+    "skipLibCheck": true
   },
   "include": [
-    "./src/"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"
   ]
 }
-
-// {
-//   "compilerOptions": {
-//     "allowJs": true,
-//     "resolveJsonModule": true,
-//     "allowSyntheticDefaultImports": true,
-//     "esModuleInterop": true,
-//     "isolatedModules": true,
-//     "jsx": "react",
-//     "lib": ["es6"],
-//     "moduleResolution": "node",
-//     "noEmit": true,
-//     "strict": true,
-//     "target": "esnext",
-//     "rootDir": "src",
-//     "baseUrl": ".",
-//     "paths": {
-//       "legacy/*": ["src/legacy/*"],
-//       "components/*": ["src/components/*"],
-//       "containers/*": ["src/containers/*"],
-//       "core/*": ["src/core/*"],
-//       "gql/*": ["src/gql/*"],
-//       "hooks/*": ["src/hooks/*"],
-//       "navigation/*": ["src/navigation/*"],
-//       "rest/*": ["src/rest/*"],
-//       "services/*": ["src/services/*"],
-//       "types/*": ["src/types/*"],
-//       "utils/*": ["src/utils/*"],
-//     }
-//   },
-//   "exclude": [
-//     "node_modules",
-//     "babel.config.js",
-//     "metro.config.js",
-//     "jest.config.js"
-//   ],
-//   "include": ["src/**/*"]
-// }

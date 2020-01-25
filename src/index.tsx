@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { render } from 'react-dom'
-import sduiConfig from './sduiConfig'
+import sduiConfig from './sdui/config'
 import { ServerDrivenUIProvider, ServerDrivenUI } from './sduiLib/react'
 import NavBar from './components/NavBar'
 import { Page, Content } from './styled'

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import ErrorImage from '../../assets/images/error.png'
+import ErrorImage from '../../../assets/images/error.png'
 import { ErrorContainer, ErrorTitle, ErrorDescription } from './styled'
 
 const Error: FC = () => (
