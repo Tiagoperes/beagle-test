@@ -17,7 +17,6 @@ export default createServerDrivenUI<Schema>({
   schemaUrl: 'https://gist.githubusercontent.com/Tiagoperes/df605a1656f27f7c2685a3c55979029b/raw/b438cd2831b0032de37fe9a1b2c320f30a3d3c4f/beagle-schema.ts',
   ErrorComponent: Error,
   LoadingComponent: Loading,
-  shouldFallbackToCache: true,
   renderComponentTree: createReactComponentTree,
   components: {
     button: Button,

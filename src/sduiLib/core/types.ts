@@ -16,7 +16,6 @@ export interface Config<Schema = any> {
   baseUrl: string,
   schemaUrl?: string,
   headers?: Record<string, string>,
-  shouldFallbackToCache: boolean,
   ErrorComponent: SupportedComponent,
   LoadingComponent: SupportedComponent,
   renderComponentTree: (config: Config<Schema>, ui: UIElement<Schema>) => JSX.Element,

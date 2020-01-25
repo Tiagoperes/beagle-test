@@ -50,6 +50,7 @@ const Input: FC<Props> = ({ value, name, placeholder, validations, style }) => {
 
   const onChange = (event: React.FocusEvent<HTMLInputElement>) => {
     const { value } = event.target
+    console.log(value)
     validate(value)
     form?.setFieldValue(name, value)
   }
