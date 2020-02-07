@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, FC } from 'react'
 import { map, uniqueId } from 'lodash'
-import { UIElement, Config } from '../core/types'
+import { UIElement } from '../core/types'
+import { Config } from './types'
 
 const createReactComponentTree = <Schema>(
   config: Config<Schema>,
@@ -14,9 +15,10 @@ const createReactComponentTree = <Schema>(
     return React.createElement(Fragment)
   }
 
-  const reactChildren = map(children, child => createReactComponentTree(config, child))
-  // @ts-ignore
-  return React.createElement(Component, { ...props, key }, reactChildren)
+  const componentChildren = map(children, child => createReactComponentTree(config, child))
+  const componentProps = { ...props, key, beagleUiTree: ui }
+
+  return React.createElement(Component as FC<any>, componentProps, componentChildren)
 }
 
 export default createReactComponentTree

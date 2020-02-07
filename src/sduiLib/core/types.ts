@@ -1,26 +1,14 @@
-import { FC } from 'react'
-
 type HttpMethod = 'post' | 'get' | 'put' | 'delete' | 'patch'
-
-/* The following type defines all supported types of components. For now, we only accept React
-Components. When we support more, we can redefine it as something like:
-
-    type SupportedComponent<Props = any> = (
-      FC<Props> | AngularComponent<Props> | VueComponent<Props> | WebComponent<Props>
-    )
-
-*/
-type SupportedComponent<Props = any> = FC<Props>
 
 export interface Config<Schema = any> {
   baseUrl: string,
   schemaUrl?: string,
   headers?: Record<string, string>,
-  ErrorComponent: SupportedComponent,
-  LoadingComponent: SupportedComponent,
-  renderComponentTree: (config: Config<Schema>, ui: UIElement<Schema>) => JSX.Element,
+  renderError: () => any,
+  renderLoading: () => any,
+  renderComponentTree: (config: Config<Schema>, ui: UIElement<Schema>) => any,
   components: {
-    [K in keyof Schema]: SupportedComponent<Schema[K]>
+    [K in keyof Schema]: any
   },
 }
 
@@ -39,8 +27,8 @@ export interface UIElement<Schema = any> {
 }
 
 export interface ServerDrivenUI {
-  createServerDrivenElement: (loadParams: LoadParams) => Promise<JSX.Element>,
-  Loading: SupportedComponent,
+  createServerDrivenElement: (loadParams: LoadParams) => any,
+  renderLoading: () => any,
 }
 
 export type DefaultSchema = Record<string, Record<string, any>>

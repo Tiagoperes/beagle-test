@@ -20,7 +20,7 @@ const ServerDrivenUI: FC<LoadParams> = (loadParams) => {
     throw Error('Couldn\'t find a ServerDrivenUIProvider in the component tree!')
   }
 
-  return renderedTree ? <Fragment>{renderedTree}</Fragment> : <sdui.Loading />
+  return renderedTree ? <Fragment>{renderedTree}</Fragment> : sdui.renderLoading()
 }
 
 export default ServerDrivenUI

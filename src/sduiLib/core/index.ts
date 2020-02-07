@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   DefaultSchema,
   Config,
@@ -34,12 +33,12 @@ function createServerDrivenUI<Schema = DefaultSchema>(config: Config<Schema>): S
       uiTree = await loadFromCache(loadParams)
     }
     if (uiTree) return config.renderComponentTree(config, uiTree)
-    return React.createElement(config.ErrorComponent)
+    return config.renderError()
   }
 
   return {
     createServerDrivenElement,
-    Loading: config.LoadingComponent,
+    renderLoading: config.renderLoading,
   }
 }
 
