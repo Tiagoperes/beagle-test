@@ -52,7 +52,7 @@
     "http-server": "^0.12.1",
     "husky": "^4.2.1",
     "jest": "25.1.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "source-map-loader": "0.2.4",
     "ts-jest": "25.0.0",
     "webpack": "4.41.5",
